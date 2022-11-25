@@ -1,0 +1,4 @@
+CREATE VIEW CS_VIEW AS
+SELECT DISTINCT *
+FROM Student
+WHERE Student.Sdept = 'CS';

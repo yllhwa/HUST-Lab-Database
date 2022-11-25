@@ -1,0 +1,5 @@
+SELECT CS_VIEW.*
+FROM CS_VIEW,
+    SC
+WHERE CS_VIEW.Sno = SC.Sno
+    AND SC.Cno = 1;
