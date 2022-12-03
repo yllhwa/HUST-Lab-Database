@@ -7,5 +7,5 @@ logger = logging.getLogger(__name__)
 
 
 if __name__ == '__main__':
-    window = webview.create_window('My first pywebview application', server)
-    webview.start()
+    window = webview.create_window('学生管理系统', server)
+    webview.start(debug=True)

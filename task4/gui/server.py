@@ -4,9 +4,7 @@ from utils import jsonResponse
 import database
 
 server = Flask(__name__)
-server.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 server.config['JSON_AS_ASCII'] = False
-database.db.init_app(server)
 
 
 @server.route('/')
@@ -141,20 +139,24 @@ def getCourseCount():
 def getSCCount():
     return jsonResponse(database.getSCCount(), 200, "success")
 
+
 @api.route('/stat')
 def getStat():
     dept = request.args.get('dept', None, type=str)
     return jsonResponse(database.getStat(dept), 200, "success")
+
 
 @api.route('/rank')
 def getRank():
     dept = request.args.get('dept', None, type=str)
     return jsonResponse(database.getRank(dept), 200, "success")
 
+
 @api.route('/search')
 def search():
     Sno = request.args.get('Sno', None, type=str)
     return jsonResponse(database.search(Sno), 200, "success")
+
 
 server.register_blueprint(api)
 
